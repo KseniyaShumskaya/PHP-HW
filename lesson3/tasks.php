@@ -18,6 +18,19 @@ echo $path_parts['filename'], "\n";
 //Создать функцию по преобразованию нотаций:
 // строка вида 'this_is_string' преобразуется в 'thisIsString' (CamelCase-нотация)
 
+function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
+{
+
+    $str = str_replace('_', '', ucwords($string, '_'));
+
+    if (!$capitalizeFirstCharacter) {
+        $str = lcfirst($str);
+    }
+
+    return $str;
+}
+
+echo dashesToCamelCase('this_is_string');
 
 //task 4
 // Сгенерировать 5 массивов из случайных чисел.
